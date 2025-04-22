@@ -1,13 +1,22 @@
 package com.example.greeting.Model;
 
-public class Greeting {
-    private String message;
-    private String sender;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-    public Greeting(String message, String sender) {
-        this.message = message;
-        this.sender = sender;
-    }
+@Entity
+public class Greeting {
+
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  @Id
+    private Long id ;
+
+    @Column
+    private String message;
+    @Column
+    private String sender;
 
     public String getMessage() {
       return message;
@@ -23,6 +32,14 @@ public class Greeting {
 
     public void setSender(String sender) {
       this.sender = sender;
+    }
+
+    public Long getId() {
+      return id;
+    }
+
+    public void setId(Long id) {
+      this.id = id;
     }
 }
 
