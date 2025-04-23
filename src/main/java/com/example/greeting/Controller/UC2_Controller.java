@@ -14,6 +14,6 @@ public class UC2_Controller {
   @GetMapping("/fetch")
   public String getHello(){
     return service.getService() ; 
-  } 
+  }   
 
 }
